@@ -25,6 +25,6 @@ public class Produit {
     }
 
     public int getStock() {
-        return stock;
+        return Stock;
     }
 }
