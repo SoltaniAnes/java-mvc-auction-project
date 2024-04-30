@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class DatabaseConnectionManager {
 
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521:XE";
-    private static final String USERNAME = "your_username";
-    private static final String PASSWORD = "your_password";
+    private static final String URL = "jdbc:oracle:thin:@oracle1.ensimag.fr:1521:oracle1";
+    private static final String USERNAME = "steimerl";
+    private static final String PASSWORD = "steimerl";
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
