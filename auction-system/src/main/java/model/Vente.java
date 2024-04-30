@@ -1,3 +1,5 @@
+package model;
+
 public class Vente {
     private int id_utilisateur;
     private int id_produit;
