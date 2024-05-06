@@ -23,5 +23,15 @@ public class Caracteristique {
     }
 
     // Setters
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
+    public void setValeurs(ArrayList<String> valeurs) {
+        this.valeurs = valeurs;
+    }
+
+    public void addValeur(String valeur) {
+        valeurs.add(valeur);
+    }
 }

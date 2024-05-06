@@ -11,7 +11,8 @@ public class SalleDeVente {
     private ArrayList<Vente> ventes;
 
     // Constructor
-    public SalleDeVente(Categorie categorie, String nom, String description) {
+    public SalleDeVente(int idSalleDeVente, Categorie categorie, String nom, String description) {
+        this.id_salle_de_vente = idSalleDeVente;
         this.categorie = categorie;
         this.nom = nom;
         this.description = description;

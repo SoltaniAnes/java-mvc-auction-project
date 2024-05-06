@@ -1,5 +1,4 @@
-package model;
-
+package main.java.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
