@@ -1,24 +1,29 @@
 package main.java.model;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class SalleDeVente {
 
     // Attributes
-    private int id_salle_de_vente;
+    private UUID id_salle_de_vente;
     private Categorie categorie;
     private String nom; // Optional ?
     private String description;
     private ArrayList<Vente> ventes;
 
     // Constructor
-    public SalleDeVente(int idSalleDeVente, Categorie categorie, String nom, String description) {
-        this.id_salle_de_vente = idSalleDeVente;
+    public SalleDeVente(Categorie categorie, String nom, String description) {
+        this.id_salle_de_vente = UUID.randomUUID();
         this.categorie = categorie;
         this.nom = nom;
         this.description = description;
     }
 
     // Getters
+    public UUID getId_salle_de_vente() {
+        return id_salle_de_vente;
+    }
+    
     public Categorie getCategorie() {
         return categorie;
     }

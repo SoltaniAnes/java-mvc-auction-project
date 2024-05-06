@@ -1,14 +1,15 @@
 package main.java.model;
 import java.util.Date;
+import java.util.UUID;
 
 public class Enchere {
-    private int ID_Enchere;
+    private UUID ID_Enchere;
     private int Email_utilisateur;
     private float Prix_achat;
     private Date Date;
 
     public Enchere(int ID_Enchere, int email_utilisateur, float prix_achat, Date date) {
-        this.ID_Enchere = ID_Enchere;
+        this.ID_Enchere = UUID.randomUUID();
         this.Email_utilisateur = email_utilisateur;
         this.Prix_achat = prix_achat;
         this.Date = date;
@@ -22,11 +23,11 @@ public class Enchere {
         Email_utilisateur = email_utilisateur;
     }
 
-    public int getID_Enchere() {
+    public UUID getID_Enchere() {
         return ID_Enchere;
     }
 
-    public void setID_Enchere(int ID_Enchere) {
+    public void setID_Enchere(UUID ID_Enchere) {
         this.ID_Enchere = ID_Enchere;
     }
 
