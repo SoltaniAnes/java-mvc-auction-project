@@ -2,9 +2,12 @@ package model;
 
 public class Produit {
 
+    // Attributes
+    private int id_produit;
     private String nom;
     private int prix_revient;
     private int stock;
+    private <ArrayList>Caracteristique caracteristiques;
 
     // Constructor
     public Produit(String nom, int prix_revient, int stock) {
