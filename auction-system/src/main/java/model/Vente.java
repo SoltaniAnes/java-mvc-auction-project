@@ -1,4 +1,5 @@
-package model;
+package main.java.model;
+import java.util.Date;
 
 public class Vente {
     private int id_utilisateur;

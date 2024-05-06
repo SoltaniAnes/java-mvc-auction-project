@@ -1,3 +1,6 @@
+package main.java.model;
+import java.util.ArrayList;
+
 public class SalleDeVente {
 
     // Attributes
@@ -5,7 +8,7 @@ public class SalleDeVente {
     private Categorie categorie;
     private String nom; // Optional ?
     private String description;
-    private <ArrayList>Vente ventes;
+    private ArrayList<Vente> ventes;
 
     // Constructor
     public SalleDeVente(Categorie categorie, String nom, String description) {
@@ -27,7 +30,7 @@ public class SalleDeVente {
         return description;
     }
 
-    public <ArrayList>Vente getVentes() {
+    public ArrayList<Vente> getVentes() {
         return ventes;
     }
 
@@ -44,7 +47,7 @@ public class SalleDeVente {
         this.description = description;
     }
 
-    public void setVentes(<ArrayList>Vente ventes) {
+    public void setVentes(ArrayList<Vente> ventes) {
         this.ventes = ventes;
     }
 

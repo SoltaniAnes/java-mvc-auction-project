@@ -1,7 +1,10 @@
+package main.java.model;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Utilisateur {
+
+    // Attributes
     private String email;
     private String nom;
     private String prenom;
@@ -17,8 +20,6 @@ public class Utilisateur {
         this.prenom = prenom;
         this.adresse = adresse;
     }
-
-
 
     // Getters
     public String getEmail() {
@@ -52,6 +53,7 @@ public class Utilisateur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }

@@ -1,4 +1,5 @@
-package model;
+package main.java.model;
+import java.util.ArrayList;
 
 public class Produit {
 
@@ -7,13 +8,14 @@ public class Produit {
     private String nom;
     private int prix_revient;
     private int stock;
-    private <ArrayList>Caracteristique caracteristiques;
+    private ArrayList<Caracteristique> caracteristiques;
 
     // Constructor
     public Produit(String nom, int prix_revient, int stock) {
         this.nom = nom;
         this.prix_revient = prix_revient;
         this.stock = stock;
+        this.caracteristiques = new ArrayList<Caracteristique>();
     }
 
     // Getters
@@ -40,5 +42,9 @@ public class Produit {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public void setCaracteristiques(ArrayList<Caracteristique> caracteristiques) {
+        this.caracteristiques = caracteristiques;
     }
 }
