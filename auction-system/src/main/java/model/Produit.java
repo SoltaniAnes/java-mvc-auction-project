@@ -2,31 +2,40 @@ package model;
 
 public class Produit {
 
-    private String Nom;
-    private int Prix_revient;
-    private int Stock;
+    private String nom;
+    private int prix_revient;
+    private int stock;
 
+    // Constructor
+    public Produit(String nom, int prix_revient, int stock) {
+        this.nom = nom;
+        this.prix_revient = prix_revient;
+        this.stock = stock;
+    }
+
+    // Getters
     public String getNom() {
-        return Nom;
-    }
-
-    public void setNom(String nom) {
-        Nom = nom;
-    }
-
-    public void setPrix_revient(int prix_revient) {
-        Prix_revient = prix_revient;
-    }
-
-    public void setStock(int Stock) {
-        this.Stock = Stock;
+        return nom;
     }
 
     public int getPrix_revient() {
-        return Prix_revient;
+        return prix_revient;
     }
 
     public int getStock() {
-        return Stock;
+        return stock;
+    }
+
+    // Setters
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrix_revient(int prix_revient) {
+        this.prix_revient = prix_revient;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }
