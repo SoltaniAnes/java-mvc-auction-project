@@ -10,8 +10,13 @@ public class CLIController {
     // Constructor
     private CLIController() {
         this.view = new CLIView();
-        this.model = BaieElectroniqueModel.getInstance();
     }
 
-
+    // Functions
+    public static CLIController getInstance() {
+        if (instance == null) {
+            instance = new CLIController();
+        }
+        return instance;
+    }
 }
