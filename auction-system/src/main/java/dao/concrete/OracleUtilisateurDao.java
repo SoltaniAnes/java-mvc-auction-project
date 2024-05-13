@@ -18,6 +18,7 @@ public class OracleUtilisateurDao implements UtilisateurDao {
     private static final String FIND_BY_EMAIL = "SELECT * FROM users WHERE email = ?";
     private static final String DELETE = "DELETE FROM users WHERE email = ?";
     private static final String DELETE_ALL = "DELETE FROM users";
+    private static final String UPDATE = "UPDATE users SET nom = ?, prenom = ?, adresse = ? WHERE email = ?";
 
     @Override
     public Utilisateur insert(Utilisateur user) throws SQLException {
@@ -80,6 +81,19 @@ public class OracleUtilisateurDao implements UtilisateurDao {
     private Utilisateur createUser(ResultSet rset) throws SQLException {
         Utilisateur user = new Utilisateur(rset.getString("email"), rset.getString("nom"),
                 rset.getString("prenom"), rset.getString("adresse"));
+        return user;
+    }
+
+    @Override
+    public Utilisateur update(Utilisateur user) throws SQLException {
+        try (Connection c = DaoFactory.getDatabase().openConnection();
+             PreparedStatement pstmt = c.prepareStatement(UPDATE)) {
+            pstmt.setString(1, user.getNom());
+            pstmt.setString(2, user.getPrenom());
+            pstmt.setString(3, user.getAdresse());
+            pstmt.setString(4, user.getEmail());
+            pstmt.executeUpdate();
+        }
         return user;
     }
 }
