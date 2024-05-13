@@ -2,6 +2,8 @@ package main.java.dao.interfaces;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.UUID;
+
 import main.java.model.Produit;
 
 public interface ProduitDao {

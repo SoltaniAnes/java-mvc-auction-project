@@ -13,7 +13,7 @@ public class Produit {
     private ArrayList<Categorie> categories;
 
     // Constructor
-    public Produit(int id_produit, String nom, int prix_revient, int stock, ArrayList<Caracteristique> caracteristiques, ArrayList<Categorie> categories) {
+    public Produit(UUID id_produit, String nom, int prix_revient, int stock, ArrayList<Categorie> categories) {
         this.id_produit = UUID.randomUUID();
         this.nom = nom;
         this.prix_revient = prix_revient;
@@ -38,8 +38,8 @@ public class Produit {
     public ArrayList<Caracteristique> getCaracteristiques() {
         return caracteristiques;
     }
-    public ArrayList<Categorie> getCategories() {
-        return categories;
+    public String getCategories() {
+        return getCategoriesAsString();
     }
 
     // Setters
@@ -81,11 +81,34 @@ public class Produit {
     }
 
     // Create a product
-    public void creerProduit(String nom, int prix_revient, int stock, ArrayList<Caracteristique> caracteristiques, ArrayList<Categorie> categories) {
+    public void creerProduit(String nom, int prix_revient, int stock, ArrayList<Categorie> categories) {
         this.nom = nom;
         this.prix_revient = prix_revient;
         this.stock = stock;
         this.caracteristiques = caracteristiques;
         this.categories = categories;
+    }
+    public String getCategoriesAsString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        // Iterate over each category in the list
+        for (Categorie categorie : categories) {
+            // Append the category name to the string builder
+            stringBuilder.append(categorie.getNom());
+
+            // Append a semicolon if it's not the last category
+            if (categories.indexOf(categorie) < categories.size() - 1) {
+                stringBuilder.append(";");
+            }
+        }
+
+        // Return the string representation of categories
+        return stringBuilder.toString();
+    }
+    public String[] setCategoriesFromString(String categoriesString) {
+        // Split the string into an array of category names
+        String[] categoryNames = categoriesString.split(";");
+
+        return categoryNames;
     }
 }

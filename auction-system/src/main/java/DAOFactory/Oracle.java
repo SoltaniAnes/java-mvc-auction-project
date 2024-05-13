@@ -3,6 +3,9 @@ package main.java.DAOFactory;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+
+import main.java.dao.concrete.OracleProduitDao;
+import main.java.dao.interfaces.ProduitDao;
 import main.java.dao.interfaces.UtilisateurDao;
 import main.java.dao.concrete.OracleUtilisateurDao;
 public class Oracle extends DaoFactory {
@@ -26,5 +29,8 @@ public class Oracle extends DaoFactory {
     public UtilisateurDao getUserDao() {
         return new OracleUtilisateurDao();
     }
-
+    @Override
+    public ProduitDao getProduitDao() {
+        return new OracleProduitDao();
+    }
 }

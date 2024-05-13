@@ -6,9 +6,9 @@ import main.java.dao.interfaces.UtilisateurDao;
 import main.java.model.Utilisateur;
 
 public class OracleUserDaoTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         UtilisateurDao userDao = new OracleUtilisateurDao();
-
+        System.out.println(userDao.all().get(0).getEmail());
         // Create a new user
         Utilisateur user = new Utilisateur("johndoe@gmail.com","Doe","Jhon","test");
         user.setNom("John Doe");
