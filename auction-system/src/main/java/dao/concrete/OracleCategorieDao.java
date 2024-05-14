@@ -16,6 +16,8 @@ public class OracleCategorieDao implements CategorieDao {
 
     private static final String INSERT = "INSERT INTO Categorie (nom, description) VALUES (?, ?)";
     private static final String ALL = "SELECT * FROM Categorie";
+
+    private static final String BYNAME = "SELECT * FROM Categorie where nom=?";
     private static final String DELETE = "DELETE FROM Categorie WHERE nom=?";
 
     @Override
@@ -57,10 +59,20 @@ public class OracleCategorieDao implements CategorieDao {
     }
 
     @Override
-    public Produit findByName(String name) throws SQLException {
-        return null;
+    public Categorie findByName(String name) throws SQLException {
+        Categorie categorie;
+        try (Connection c = DaoFactory.getDatabase().openConnection();
+             PreparedStatement pstmt = c.prepareStatement(BYNAME)){
+             pstmt.setString(1,name);
+             ResultSet rset = pstmt.executeQuery() ;
+             rset.next();
+             categorie = createCategorie(rset);
+        }
+        return categorie;
     }
+
     private Categorie createCategorie(ResultSet rset) throws SQLException {
+
         Categorie categorie = new Categorie(rset.getString("nom"), rset.getString("description"));
         return categorie;
     }

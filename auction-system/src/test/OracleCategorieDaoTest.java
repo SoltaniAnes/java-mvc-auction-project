@@ -13,14 +13,14 @@ public class OracleCategorieDaoTest {
     public static void main(String[] args) throws SQLException {
         CategorieDao categorieDao = new OracleCategorieDao();
         // Create a new user
-        Categorie categorie = new Categorie("Telephones","Catégorie des téléphonies");
+        Categorie categorie = new Categorie("test","Catégorie des téléphonies");
 
 
         try {
             // Insert the user into the database
             Categorie insertedCategorie = categorieDao.insert(categorie);
 
-            Categorie firstcat=categorieDao.all().get(0);
+            Categorie firstcat=categorieDao.findByName("Telephones");
 
             System.out.println(firstcat.getNom());
             System.out.println(categorieDao.delete(firstcat));

@@ -5,6 +5,8 @@ import main.java.model.Utilisateur;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class CLIUtilisateur {
 
@@ -76,12 +78,12 @@ public class CLIUtilisateur {
         String adresse = scanner.nextLine();
         System.out.println(email + " " + nom + " " + prenom + " " + adresse);
 
-//        try {
-//            utilisateurController.createUtilisateur(email, nom, prenom, adresse);
-//            System.out.println("Utilisateur créé avec succès !");
-//        } catch (SQLException e) {
-//            System.out.println("Erreur lors de la création de l'utilisateur : " + e.getMessage());
-//        }
+    try {
+            utilisateurController.createUtilisateur(email, nom, prenom, adresse);
+            System.out.println("Utilisateur créé avec succès !");
+       } catch (SQLException e) {
+            System.out.println("Erreur lors de la création de l'utilisateur : " + e.getMessage());
+         }
     }
 
     private void mettreAJourUtilisateur() {
@@ -135,7 +137,20 @@ public class CLIUtilisateur {
     }
 
     public static void main(String[] args) {
+        /*Timer timer = new Timer();
+
+        TimerTask task = new TimerTask() {
+            public void run() {
+                // Task to be executed every 10 seconds
+                System.out.println("Task executed at: " + new java.util.Date());
+            }
+        };
+
+        // Schedule the task to run every 10 seconds, with no delay on first execution
+        timer.scheduleAtFixedRate(task, 0, 10000); // Parameters are (TimerTask, delay, period)
+*/
         CLIUtilisateur utilisateurView = new CLIUtilisateur();
         utilisateurView.afficherMenu();
-    }
-}
+
+    }}
+

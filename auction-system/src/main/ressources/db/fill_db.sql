@@ -1,11 +1,11 @@
--- Insertion des utilisateurs
+    -- Insertion des utilisateurs
 INSERT INTO UTILISATEUR (EMAIL, NOM, PRENOM, ADRESSE) VALUES
 ('utilisateur1@example.com', 'Dupont', 'Jean', '1 rue des Lilas, 75001 Paris'),
 ('utilisateur2@example.com', 'Martin', 'Marie', '15 avenue du Château, 69002 Lyon'),
 ('utilisateur3@example.com', 'Durand', 'Pierre', '28 rue des Roses, 13003 Marseille');
 
 -- Insertion des catégories
-INSERT INTO CATEGORIE (NOM, DESCRIPTION) VALUES
+INSERT ALL INTO CATEGORIE (NOM, DESCRIPTION) VALUES
 ('Electronique', 'Produits électroniques et high-tech'),
 ('Mode', 'Vêtements, chaussures, accessoires'),
 ('Maison', 'Articles pour la maison');

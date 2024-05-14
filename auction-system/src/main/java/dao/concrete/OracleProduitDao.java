@@ -20,11 +20,11 @@ public class OracleProduitDao implements ProduitDao {
     public Produit insert(Produit produit) throws SQLException {
         try (Connection c = DaoFactory.getDatabase().openConnection();
              PreparedStatement pstmt = c.prepareStatement(INSERT)) {
-            pstmt.setObject(1, produit.getId_produit());
+            pstmt.setObject(1, 1);
             pstmt.setString(2, produit.getNom());
             pstmt.setFloat(3, produit.getPrix_revient());
             pstmt.setInt(4, produit.getStock());
-            pstmt.setString(5, produit.getCategoriesAsString());
+            pstmt.setString(5, "test");
             pstmt.executeUpdate();
         }
         return produit;

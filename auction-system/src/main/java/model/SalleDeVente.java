@@ -1,4 +1,5 @@
 package main.java.model;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -7,15 +8,18 @@ public class SalleDeVente {
     // Attributes
     private UUID id_salle_de_vente;
     private Categorie categorie;
-    private String nom; // Optional ?
+    private TypeDeVente type; // Optional ?
     private String description;
+
+    private String nom;
     private ArrayList<Vente> ventes;
 
     // Constructor
-    public SalleDeVente(Categorie categorie, String nom, String description) {
+    public SalleDeVente(Categorie categorie, String nom, TypeDeVente type, String description) {
         this.id_salle_de_vente = UUID.randomUUID();
         this.categorie = categorie;
-        this.nom = nom;
+        this.type = type;
+        this.nom=nom;
         this.description = description;
     }
 
@@ -28,6 +32,9 @@ public class SalleDeVente {
         return categorie;
     }
 
+    public TypeDeVente getType() {
+        return type;
+    }
     public String getNom() {
         return nom;
     }

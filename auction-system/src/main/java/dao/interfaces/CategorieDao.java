@@ -11,6 +11,6 @@ public interface CategorieDao {
     Categorie insert(Categorie categorie) throws SQLException;
     List<Categorie> all() throws SQLException;
     int delete(Categorie produit) throws SQLException;
-    Produit findByName(String name) throws SQLException;
+    Categorie findByName(String name) throws SQLException;
 
 }
