@@ -7,13 +7,13 @@ public class Produit {
     // Attributes
     private UUID id_produit;
     private String nom;
-    private int prix_revient;
+    private float prix_revient;
     private int stock;
     private ArrayList<Caracteristique> caracteristiques;
     private ArrayList<Categorie> categories;
 
     // Constructor
-    public Produit(UUID id_produit, String nom, int prix_revient, int stock, ArrayList<Categorie> categories) {
+    public Produit(UUID id_produit, String nom, float prix_revient, int stock, ArrayList<Categorie> categories) {
         this.id_produit = UUID.randomUUID();
         this.nom = nom;
         this.prix_revient = prix_revient;
@@ -29,7 +29,7 @@ public class Produit {
     public String getNom() {
         return nom;
     }
-    public int getPrix_revient() {
+    public float getPrix_revient() {
         return prix_revient;
     }
     public int getStock() {

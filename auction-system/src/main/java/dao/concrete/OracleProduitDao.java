@@ -22,7 +22,7 @@ public class OracleProduitDao implements ProduitDao {
              PreparedStatement pstmt = c.prepareStatement(INSERT)) {
             pstmt.setObject(1, produit.getId_produit());
             pstmt.setString(2, produit.getNom());
-            pstmt.setInt(3, produit.getPrix_revient());
+            pstmt.setFloat(3, produit.getPrix_revient());
             pstmt.setInt(4, produit.getStock());
             pstmt.setString(5, produit.getCategoriesAsString());
             pstmt.executeUpdate();

@@ -18,7 +18,7 @@ public class OracleProduitDaoTest {
 
         // Create sample data for the produit
         String nom = "Sample Produit";
-        int prix_revient = 50;
+        float prix_revient = 50;
         int stock = 100;
         List<Caracteristique> caracteristiques = new ArrayList<>();
         List<Categorie> categories = new ArrayList<>();
