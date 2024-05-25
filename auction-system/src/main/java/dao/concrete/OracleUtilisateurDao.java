@@ -16,9 +16,9 @@ public class OracleUtilisateurDao implements UtilisateurDao {
     private static final String INSERT = "INSERT INTO UTILISATEUR (email, nom, prenom, adresse) VALUES (?, ?, ?, ?)";
     private static final String ALL = "SELECT * FROM UTILISATEUR";
     private static final String FIND_BY_EMAIL = "SELECT * FROM users WHERE email = ?";
-    private static final String DELETE = "DELETE FROM users WHERE email = ?";
-    private static final String DELETE_ALL = "DELETE FROM users";
-    private static final String UPDATE = "UPDATE users SET nom = ?, prenom = ?, adresse = ? WHERE email = ?";
+    private static final String DELETE = "DELETE FROM UTILISATEUR WHERE email = ?";
+    private static final String DELETE_ALL = "DELETE FROM UTILISATEUR";
+    private static final String UPDATE = "UPDATE UTILISATEUR SET nom = ?, prenom = ?, adresse = ? WHERE email = ?";
 
     @Override
     public Utilisateur insert(Utilisateur user) throws SQLException {

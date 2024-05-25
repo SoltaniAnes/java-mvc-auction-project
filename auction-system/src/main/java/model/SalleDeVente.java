@@ -6,7 +6,7 @@ import java.util.UUID;
 public class SalleDeVente {
 
     // Attributes
-    private UUID id_salle_de_vente;
+    private int id_salle_de_vente;
     private Categorie categorie;
     private TypeDeVente type; // Optional ?
     private String description;
@@ -15,8 +15,8 @@ public class SalleDeVente {
     private ArrayList<Vente> ventes;
 
     // Constructor
-    public SalleDeVente(Categorie categorie, String nom, TypeDeVente type, String description) {
-        this.id_salle_de_vente = UUID.randomUUID();
+    public SalleDeVente(int id_salle_de_vente,Categorie categorie, String nom, TypeDeVente type, String description) {
+        this.id_salle_de_vente = id_salle_de_vente;
         this.categorie = categorie;
         this.type = type;
         this.nom=nom;
@@ -24,7 +24,7 @@ public class SalleDeVente {
     }
 
     // Getters
-    public UUID getId_salle_de_vente() {
+    public int getId_salle_de_vente() {
         return id_salle_de_vente;
     }
     

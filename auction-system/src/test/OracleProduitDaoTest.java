@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class OracleProduitDaoTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // Create a new produit DAO
         ProduitDao produitDao = new OracleProduitDao();
 
@@ -21,12 +21,11 @@ public class OracleProduitDaoTest {
         float prix_revient = 50;
         int stock = 100;
         List<Caracteristique> caracteristiques = new ArrayList<>();
-        List<Categorie> categories = new ArrayList<>();
 
         // Insert the produit into the database
         try {
-            UUID id_produit = UUID.randomUUID();
-            Produit produit = new Produit(id_produit, nom, prix_revient, stock, (ArrayList<Categorie>) categories);
+            int id_produit = 200;
+            Produit produit = new Produit(id_produit, nom, prix_revient, stock, ((OracleProduitDao)produitDao).categorieDao.findByName("Electronics"));
             produitDao.insert(produit);
             System.out.println("Produit inserted: " + produit);
         } catch (SQLException e) {

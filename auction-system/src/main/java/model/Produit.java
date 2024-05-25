@@ -5,25 +5,25 @@ import java.util.UUID;
 public class Produit {
 
     // Attributes
-    private UUID id_produit;
+    private int id_produit;
     private String nom;
     private float prix_revient;
     private int stock;
     private ArrayList<Caracteristique> caracteristiques;
-    private ArrayList<Categorie> categories;
+    private Categorie categorie;
 
     // Constructor
-    public Produit(UUID id_produit, String nom, float prix_revient, int stock, ArrayList<Categorie> categories) {
-        this.id_produit = UUID.randomUUID();
+    public Produit(int id_produit, String nom, float prix_revient, int stock, Categorie categorie) {
+        this.id_produit = id_produit;
         this.nom = nom;
         this.prix_revient = prix_revient;
         this.stock = stock;
         this.caracteristiques = caracteristiques;
-        this.categories = categories;
+        this.categorie = categorie;
     }
 
     // Getters
-    public UUID getId_produit() {
+    public int getId_produit() {
         return id_produit;
     }
     public String getNom() {
@@ -38,8 +38,8 @@ public class Produit {
     public ArrayList<Caracteristique> getCaracteristiques() {
         return caracteristiques;
     }
-    public String getCategories() {
-        return getCategoriesAsString();
+    public Categorie getCategorie() {
+        return categorie;
     }
 
     // Setters
@@ -55,20 +55,11 @@ public class Produit {
     public void setCaracteristiques(ArrayList<Caracteristique> caracteristiques) {
         this.caracteristiques = caracteristiques;
     }
-    public void setCategories(ArrayList<Categorie> categories) {
-        this.categories = categories;
+    public void setCategories(Categorie categorie) {
+        this.categorie = categorie;
     }
 
     // Functions
-    // Add a categorie to the list of categories
-    public void addCategorie(Categorie categorie) {
-        categories.add(categorie);
-    }
-
-    // Remove a categorie from the list of categories
-    public void removeCategorie(Categorie categorie) {
-        categories.remove(categorie);
-    }
 
     // Add a caracteristique to the list of caracteristiques
     public void addCaracteristique(Caracteristique caracteristique) {
@@ -81,34 +72,17 @@ public class Produit {
     }
 
     // Create a product
-    public void creerProduit(String nom, int prix_revient, int stock, ArrayList<Categorie> categories) {
+    public void creerProduit(String nom, int prix_revient, int stock, Categorie categorie) {
         this.nom = nom;
         this.prix_revient = prix_revient;
         this.stock = stock;
         this.caracteristiques = caracteristiques;
-        this.categories = categories;
+        this.categorie = categorie;
     }
-    public String getCategoriesAsString() {
-        StringBuilder stringBuilder = new StringBuilder();
 
-        // Iterate over each category in the list
-        for (Categorie categorie : categories) {
-            // Append the category name to the string builder
-            stringBuilder.append(categorie.getNom());
 
-            // Append a semicolon if it's not the last category
-            if (categories.indexOf(categorie) < categories.size() - 1) {
-                stringBuilder.append(";");
-            }
-        }
 
-        // Return the string representation of categories
-        return stringBuilder.toString();
-    }
-    public String[] setCategoriesFromString(String categoriesString) {
-        // Split the string into an array of category names
-        String[] categoryNames = categoriesString.split(";");
-
-        return categoryNames;
+    public void setCategorie(Categorie insertedCategorie) {
+        this.categorie=insertedCategorie;
     }
 }

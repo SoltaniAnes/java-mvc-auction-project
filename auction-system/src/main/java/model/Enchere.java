@@ -3,31 +3,36 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Enchere {
-    private UUID ID_Enchere;
-    private int Email_utilisateur;
+    private int ID_Enchere;
+    private String Email_utilisateur;
     private float Prix_achat;
     private Date Date;
-
-    public Enchere(int ID_Enchere, int email_utilisateur, float prix_achat, Date date) {
-        this.ID_Enchere = UUID.randomUUID();
+    private Vente vente;
+    public Enchere(int ID_Enchere, String email_utilisateur, float prix_achat, Date date,Vente vente) {
+        this.ID_Enchere = ID_Enchere;
         this.Email_utilisateur = email_utilisateur;
         this.Prix_achat = prix_achat;
         this.Date = date;
+        this.vente= vente;
     }
 
-    public int getEmail_utilisateur() {
+    public String getEmail_utilisateur() {
         return Email_utilisateur;
     }
 
-    public void setEmail_utilisateur(int email_utilisateur) {
+    public void setEmail_utilisateur(String email_utilisateur) {
         Email_utilisateur = email_utilisateur;
     }
 
-    public UUID getID_Enchere() {
+    public int getID_Enchere() {
         return ID_Enchere;
     }
+    public Vente getVente() {
+        return vente;
+    }
 
-    public void setID_Enchere(UUID ID_Enchere) {
+
+    public void setID_Enchere(int ID_Enchere) {
         this.ID_Enchere = ID_Enchere;
     }
 
