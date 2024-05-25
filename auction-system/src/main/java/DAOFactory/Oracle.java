@@ -10,9 +10,9 @@ import main.java.dao.concrete.OracleUtilisateurDao;
 
 public class Oracle extends DaoFactory {
 
-    private static final String DB_URL = "jdbc:oracle:thin:@oracle1.ensimag.fr:1521:oracle1";
-    private static final String USER = "soltanim";
-    private static final String PASSWORD = "soltanim";
+    private static final String DB_URL = "jdbc:oracle:thin:@hostname:1521:oracle1";
+    private static final String USER = "";
+    private static final String PASSWORD = "";
 
     @Override
     public Connection openConnection() {
